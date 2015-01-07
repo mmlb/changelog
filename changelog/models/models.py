@@ -50,7 +50,7 @@ class TagModel(Base):
 class TagAssociationModel(Base):
     __tablename__ = 'TagAssociation'
     id = Column(Integer, primary_key=True)
-    Entry = Column(Integer, ForeignKey("ChangelogEntry.id")
+    Entry = Column(Integer, ForeignKey("ChangelogEntry.id"))
     Tag = Column(Integer, ForeignKey("Tags.id"))
 
     def __init__(self, entry, tag):
@@ -60,7 +60,7 @@ class TagAssociationModel(Base):
 class SystemAssociationModel(Base):
     __tablename__ = 'SystemAssociation'
     id = Column(Integer, primary_key=True)
-    Entry = Column(Integer, ForeignKey("ChangelogEntry.id")
+    Entry = Column(Integer, ForeignKey("ChangelogEntry.id"))
     System = Column(Integer,ForeignKey("Systems.id"))
 
     def __init__(self, entry, system):
@@ -70,7 +70,7 @@ class SystemAssociationModel(Base):
 class SiteAssociationModel(Base):
     __tablename__ = 'SiteAssociation'
     id = Column(Integer, primary_key=True)
-    Entry = Column(Integer, ForeignKey("ChangelogEntry.id")
+    Entry = Column(Integer, ForeignKey("ChangelogEntry.id"))
     Site = Column(Integer,ForeignKey("Sites.id"))
 
     def __init__(self, entry, site):
@@ -81,7 +81,7 @@ class SiteAssociationModel(Base):
 class ChangeLogEntryModel(Base):
     __tablename__ = 'ChangelogEntry'
     id = Column(Integer, primary_key=True)
-    ParentList = Column(Integer, ForeignKey("ChangeLogLists.id")
+    ParentList = Column(Integer, ForeignKey("ChangeLogLists.id"))
     User = Column(Integer, ForeignKey("Users.id"))
     DateCreated = Column(DateTime)
     DateEdited = Column(DateTime)

@@ -12,7 +12,7 @@ from pyramid.authentication import AuthTktAuthenticationPolicy
 from pyramid.authorization import ACLAuthorizationPolicy
 
 
-from .models.Base import ( DBSession, Base)
+from .models.models import ( DBSession, Base)
 from .security import (groupfinder, LookupUser)
 
 class Root(object):
