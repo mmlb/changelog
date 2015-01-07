@@ -7,8 +7,8 @@ from sqlalchemy.orm.exc import (
 	NoResultFound
 )
 
-from flower.models.Base import DBSession
-from flower.models.UserModel import UserModel
+from changelog.models.models import DBSession
+from changelog.models.models import UserModel
 
 from pyramid.httpexceptions import HTTPFound, HTTPForbidden
 
@@ -39,7 +39,7 @@ def login_complete_view(request):
   if hasattr(request.session,'goingto'):
     loc = request.session['goingto']
   else:
-    loc = request.route_url('ListWorksheets', _query=(('next', request.path),))
+    loc = request.route_url('ListChangelogs', _query=(('next', request.path),))
 
   headers = remember(request, User.email)
   return HTTPFound(location=loc, headers=headers)

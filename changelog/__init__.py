@@ -56,6 +56,8 @@ def main(global_config, **settings):
     config.add_google_oauth2_login_from_settings(prefix='velruse.google.')
     config.add_static_view('static', 'static', cache_max_age=3600)
     config.add_route('logout', '/logout')
+    config.add_route('ListChangelogs', '/changelogs')
+    config.add_route('GetChangelog', '/changelog/{id}')
     config.add_route('home', '/')
     config.scan("changelog.views")
 
