@@ -39,6 +39,24 @@ class UserModel(Base):
     id = Column(Integer, primary_key=True)
     email = Column(Text)
 
+class TagModel(Base):
+    __tablename__ = 'Tags'
+    id = Column(Integer, primary_key=True)
+    Name = Column(Text)
+
+    def __init__(self, name):
+        self.Name=name
+
+class TagAssociationModel(Base):
+    __tablename__ = 'TagAssociation'
+    id = Column(Integer, primary_key=True)
+    Entry = Column(Integer, ForeignKey("ChangelogEntry.id")
+    Tag = Column(Integer, ForeignKey("Tags.id"))
+
+    def __init__(self, entry, tag):
+        self.Entry = entry
+        self.Tag = tag
+
 class SystemAssociationModel(Base):
     __tablename__ = 'SystemAssociation'
     id = Column(Integer, primary_key=True)
@@ -85,3 +103,5 @@ class ChangeLogListModel(Base):
     def __init__(self, name, user):
         self.User=user
         self.Name=name
+
+
