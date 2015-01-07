@@ -1,12 +1,13 @@
 """Main entry point
 """
 from pyramid.config import Configurator
-from pyramid_redis_sessions import session_factory_from_settings
 
 from pyramid.security import Allow, Authenticated
 
 from sqlalchemy import engine_from_config, event
 from sqlalchemy.orm import scoped_session, sessionmaker
+
+from pyramid_beaker import session_factory_from_settings
 
 from pyramid.authentication import AuthTktAuthenticationPolicy
 from pyramid.authorization import ACLAuthorizationPolicy

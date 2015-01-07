@@ -3,7 +3,8 @@ from sqlalchemy import (
     Index,
     Integer,
     Text,
-    DateTime
+    DateTime,
+    ForeignKey
     )
 
 from sqlalchemy.ext.declarative import declarative_base

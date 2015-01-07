@@ -5,8 +5,10 @@ development.ini
 production.ini
 setup.cfg
 setup.py
+changelog/AppLogging.py
 changelog/__init__.py
 changelog/models.py
+changelog/security.py
 changelog/tests.py
 changelog.egg-info/PKG-INFO
 changelog.egg-info/SOURCES.txt
