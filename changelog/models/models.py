@@ -39,6 +39,7 @@ class UserModel(Base):
     __tablename__ = 'Users'
     id = Column(Integer, primary_key=True)
     email = Column(Text)
+    AccessLevel = Column(Integer)
 
 class TagModel(Base):
     __tablename__ = 'Tags'
